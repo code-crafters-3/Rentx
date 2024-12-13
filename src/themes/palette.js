@@ -9,7 +9,7 @@ import ThemeOption from './theme';
 
 // ==============================|| DEFAULT THEME - PALETTE ||============================== //
 
-export default function Palette(mode, presetColor) {
+export default function Palette(mode, presetColor, primaryColor) {
   const colors = mode === 'light' ? presetPalettes : presetDarkPalettes;
   if (mode === 'dark') {
     let greyPrimary = [
@@ -50,7 +50,7 @@ export default function Palette(mode, presetColor) {
     colors.grey = [...greyPrimary, ...greyAscent, ...greyConstant];
   }
 
-  const paletteColor = ThemeOption(colors, presetColor, mode);
+  const paletteColor = ThemeOption(colors, presetColor, mode, primaryColor);
 
   return createTheme({
     palette: {
