@@ -1,7 +1,9 @@
+import { cloneElement, useState } from 'react';
+
+import PropTypes from 'prop-types';
+
 import { styled } from '@mui/material/styles';
 import { Fade, Paper } from '@mui/material';
-import { cloneElement, useState } from 'react';
-import PropTypes from 'prop-types';
 import MuiPopper from '@mui/material/Popper';
 
 const StyledPopper = styled(MuiPopper)(({ theme }) => ({
