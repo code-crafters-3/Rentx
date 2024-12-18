@@ -1,9 +1,10 @@
 // assets
-import { DashboardOutlined } from '@ant-design/icons';
+import { DashboardOutlined, CarOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  DashboardOutlined
+  DashboardOutlined,
+  CarOutlined
 };
 
 // ==============================|| MENU ITEMS - DASHBOARD ||============================== //
@@ -20,6 +21,32 @@ const dashboard = {
       url: '/dashboard/default',
       icon: icons.DashboardOutlined,
       breadcrumbs: false
+    },
+    {
+      id: 'vehicle',
+      title: 'Veículo',
+      type: 'collapse',
+      url: '/dashboard/default',
+      icon: icons.CarOutlined,
+      breadcrumbs: false,
+      subItems: [
+        {
+          id: 'vehicle_create',
+          title: 'Novo veículo',
+          type: 'item',
+          url: '/vehicle/create',
+          icon: icons.CarOutlined,
+          breadcrumbs: false
+        },
+        {
+          id: 'vehicle_list',
+          title: 'Meus veículos',
+          type: 'item',
+          url: '/vehicle/create',
+          icon: icons.CarOutlined,
+          breadcrumbs: false
+        }
+      ]
     }
   ]
 };

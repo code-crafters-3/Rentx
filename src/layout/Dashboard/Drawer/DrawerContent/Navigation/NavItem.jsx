@@ -109,7 +109,7 @@ export default function NavItem({ item, level }) {
           {itemIcon}
         </ListItemIcon>
       )}
-      {(drawerOpen || (!drawerOpen && level !== 1)) && (
+      {drawerOpen ? (
         <ListItemText
           primary={
             <Typography variant="h6" sx={{ color: isSelected ? iconSelectedColor : textColor }}>
@@ -117,8 +117,8 @@ export default function NavItem({ item, level }) {
             </Typography>
           }
         />
-      )}
-      {(drawerOpen || (!drawerOpen && level !== 1)) && item.chip && (
+      ) : null}
+      {drawerOpen && item.chip && (
         <Chip
           color={item.chip.color}
           variant={item.chip.variant}
@@ -131,4 +131,4 @@ export default function NavItem({ item, level }) {
   );
 }
 
-NavItem.propTypes = { item: PropTypes.object, level: PropTypes.number };
+NavItem.propTypes = { item: PropTypes.object, level: PropTypes.number, forceShowTitle: PropTypes.bool };
