@@ -20,6 +20,22 @@ const dashboard = {
       url: '/dashboard/default',
       icon: icons.DashboardOutlined,
       breadcrumbs: false
+    },
+    {
+      id: 'create_vehicle',
+      title: 'Veículo',
+      type: 'item',
+      url: '/vehicle/create',
+      icon: icons.DashboardOutlined,
+      breadcrumbs: false
+    },
+    {
+      id: 'list_vehicle',
+      title: 'Lista veículo',
+      type: 'item',
+      url: '/vehicle/list',
+      icon: icons.DashboardOutlined,
+      breadcrumbs: false
     }
   ]
 };
