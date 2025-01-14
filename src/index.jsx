@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// custom fonts
+import './themes/fonts/index.css';
+
 // scroll bar
 import 'simplebar-react/dist/simplebar.min.css';
 import 'slick-carousel/slick/slick.css';
