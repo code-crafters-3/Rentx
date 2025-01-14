@@ -1,6 +1,6 @@
 // ==============================|| PRESET THEME - THEME SELECTOR ||============================== //
 
-export default function Theme(colors, _, mode) {
+export default function Theme(colors, _, mode, primaryColor) {
   const { blue, red, gold, cyan, green, grey } = colors;
   const greyColors = {
     0: grey[0],
@@ -23,18 +23,20 @@ export default function Theme(colors, _, mode) {
   };
   const contrastText = '#fff';
 
+  const myPrimaryColor = colors[primaryColor] || blue;
+
   return {
     primary: {
-      lighter: blue[0],
-      100: blue[1],
-      200: blue[2],
-      light: blue[3],
-      400: blue[4],
-      main: blue[5],
-      dark: blue[6],
-      700: blue[7],
-      darker: blue[8],
-      900: blue[9],
+      lighter: myPrimaryColor[0],
+      100: myPrimaryColor[1],
+      200: myPrimaryColor[2],
+      light: myPrimaryColor[3],
+      400: myPrimaryColor[4],
+      main: myPrimaryColor[5],
+      dark: myPrimaryColor[6],
+      700: myPrimaryColor[7],
+      darker: myPrimaryColor[8],
+      900: myPrimaryColor[9],
       contrastText
     },
     secondary: {

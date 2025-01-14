@@ -23,11 +23,11 @@ interface IThemeCustomizationProps {
 const ThemeContext = createContext({} as IThemeContextData);
 
 export default function ThemeCustomization({ children }: IThemeCustomizationProps) {
-  const {theme: storagedTheme, toggleTheme} = useSettingsStore();
-  const theme = Palette(storagedTheme, 'default');
+  const { theme: storagedTheme, fontFamily, primaryColor } = useSettingsStore();
+  const theme = Palette(storagedTheme, 'default', primaryColor);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const themeTypography = Typography(`'Public Sans', sans-serif`);
+  const themeTypography = Typography(`'${fontFamily}', sans-serif`);
   const themeCustomShadows = useMemo(() => CustomShadows(theme), [theme]);
 
   const themeOptions: any = useMemo(

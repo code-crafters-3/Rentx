@@ -8,7 +8,11 @@ interface ISettings {
     toggleDrawerMode: () => void;
     drawerDirection: 'left' | 'right';
     toggleDrawerDirection: () => void;
-}
+    fontFamily: 'Roboto' | 'Public Sans' | 'Inter' | 'Poppins';
+    setFontFamily: (fontFamily: 'Roboto' | 'Public Sans' | 'Inter' | 'Poppins') => void;
+    primaryColor: 'blue' | 'cyan' | 'geekblue' | 'gold' | 'green' | 'grey' | 'lime' | 'magenta' | 'orange' | 'purple' | 'red' | 'volcano' | 'yellow';
+    setPrimaryColor: (primaryColor: 'blue' | 'cyan' | 'geekblue' | 'gold' | 'green' | 'grey' | 'lime' | 'magenta' | 'orange' | 'purple' | 'red' | 'volcano' | 'yellow') => void;
+  }
 
 export const useSettingsStore = create(
   persist<ISettings>(
@@ -19,6 +23,10 @@ export const useSettingsStore = create(
         toggleDrawerMode: () => set((state) => ({ drawerMode: state.drawerMode === 'default' ? 'mini' : 'default' })),
         drawerDirection: 'left',
         toggleDrawerDirection: () => set((state) => ({ drawerDirection: state.drawerDirection === 'left' ? 'right' : 'left' })),
+        fontFamily: 'Public Sans',
+        setFontFamily: (fontFamily) => set({ fontFamily }),
+        primaryColor: 'blue',
+        setPrimaryColor: (primaryColor) => set({ primaryColor }),
     }),
     {
       name: 'settings',

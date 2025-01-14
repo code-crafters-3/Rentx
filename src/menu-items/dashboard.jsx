@@ -26,25 +26,33 @@ const dashboard = {
       id: 'vehicle',
       title: 'Veículo',
       type: 'collapse',
-      url: '/dashboard/default',
+      url: '/vehicle/list',
       icon: icons.CarOutlined,
-      breadcrumbs: false,
-      subItems: [
+      breadcrumbs: true,
+      children: [
         {
           id: 'vehicle_create',
           title: 'Novo veículo',
           type: 'item',
           url: '/vehicle/create',
           icon: icons.CarOutlined,
-          breadcrumbs: false
+          breadcrumbs: true
         },
         {
           id: 'vehicle_list',
           title: 'Meus veículos',
           type: 'item',
-          url: '/vehicle/create',
+          url: '/vehicle/list',
           icon: icons.CarOutlined,
-          breadcrumbs: false
+          breadcrumbs: true
+        },
+        {
+          id: 'vehicle_details',
+          title: 'detelhes',
+          type: 'item',
+          url: '/vehicle/details/1',
+          icon: icons.CarOutlined,
+          breadcrumbs: true
         }
       ]
     }

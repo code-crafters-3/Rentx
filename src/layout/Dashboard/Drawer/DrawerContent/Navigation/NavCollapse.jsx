@@ -43,7 +43,7 @@ export default function NavCollapse({ item, level }) {
 
   return (
     <>
-      <HoverTooltip disabled={drawerOpen} content={<NavCollapseList items={item.subItems} />}>
+      <HoverTooltip disabled={drawerOpen} content={<NavCollapseList items={item.children} />}>
         <ListItemButton
           sx={{
             zIndex: 1201,
@@ -118,7 +118,7 @@ export default function NavCollapse({ item, level }) {
 
       <Collapse in={drawerOpen && open} timeout="auto" unmountOnExit placement="right-start">
         <List>
-          {item.subItems.map((subItem) => (
+          {item.children.map((subItem) => (
             <NavItem key={subItem.id} item={subItem} level={level + 1} />
           ))}
         </List>
