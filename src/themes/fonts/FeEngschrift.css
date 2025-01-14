@@ -1,0 +1,5 @@
+/* src/fonts.css */
+@font-face {
+    font-family: 'FeEngschrift'; 
+    src: url('../../assets/fonts/GlNummernschildEng-XgWd.ttf') format('truetype');
+  }
