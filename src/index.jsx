@@ -38,7 +38,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // ==============================|| MAIN - REACT DOM RENDER ||============================== //
 
-root.render(<App />);
+async function deferRender() {
+  const { worker } = await import('./mocks/browser.js');
+  return worker.start();
+}
+
+deferRender().then(() => {
+  root.render(<App />);
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

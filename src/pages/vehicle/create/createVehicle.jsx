@@ -10,6 +10,8 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ImagePicker } from './imagePicker';
+import { useEffect } from 'react';
+import { api } from '../../../api/axios';
 
 const schema = z.object({
   vin: z.string().nonempty('Campo obrigatório'),
@@ -52,6 +54,23 @@ export default function CreateVehicle() {
   const onSubmit = (data) => {
     console.log('onSubmit', data);
   };
+
+  useEffect(() => {
+    async function fetch() {
+      try {
+        const response = await api.post('/api/vehicles', { id: 123, place: 'ABC-1234' });
+        console.log('created vehicle', response.data);
+        const vehicles = await api.get('/api/vehicles');
+        console.log('list vehicles', vehicles.data);
+        const vehicleFound = await api.get('/api/vehicles/123');
+        console.log('vehicle found', vehicleFound.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log('error', error);
+      }
+    }
+    fetch();
+  }, []);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
