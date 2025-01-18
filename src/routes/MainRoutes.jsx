@@ -8,6 +8,7 @@ const Color = Loadable(lazy(() => import('pages/component-overview/color')));
 const Typography = Loadable(lazy(() => import('pages/component-overview/typography')));
 const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
+const CalendarDefault = Loadable(lazy(() => import('pages/calendar/index')));
 
 const VehiclePage = Loadable(lazy(() => import('pages/vehicle/create/createVehicle.jsx')));
 const ListVehiclePage = Loadable(lazy(() => import('pages/vehicle/list/listVehicle')));
@@ -24,6 +25,10 @@ const MainRoutes = {
     {
       path: '/',
       element: <DashboardDefault />
+    },
+    {
+      path: 'calendar',
+      element: <CalendarDefault />
     },
     {
       path: 'color',
