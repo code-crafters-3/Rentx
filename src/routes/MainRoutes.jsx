@@ -10,6 +10,9 @@ const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
 const CalendarDefault = Loadable(lazy(() => import('pages/calendar/index')));
 
+const VehiclePage = Loadable(lazy(() => import('pages/vehicle/create/createVehicle.jsx')));
+const ListVehiclePage = Loadable(lazy(() => import('pages/vehicle/list/listVehicle')));
+const VehicleDetails = Loadable(lazy(() => import('pages/vehicle/details/index.jsx')));
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 
@@ -43,6 +46,18 @@ const MainRoutes = {
     {
       path: 'sample-page',
       element: <SamplePage />
+    },
+    {
+      path: 'vehicle/create',
+      element: <VehiclePage />
+    },
+    {
+      path: 'vehicle/list',
+      element: <ListVehiclePage />
+    },
+    {
+      path: 'vehicle/details/:id',
+      element: <VehicleDetails />
     },
     {
       path: 'shadow',
