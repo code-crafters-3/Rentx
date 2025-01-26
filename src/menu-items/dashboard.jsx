@@ -1,10 +1,11 @@
 // assets
-import { DashboardOutlined, CarOutlined } from '@ant-design/icons';
+import { DashboardOutlined, CarOutlined, UserOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
   DashboardOutlined,
-  CarOutlined
+  CarOutlined,
+  UserOutlined
 };
 
 // ==============================|| MENU ITEMS - DASHBOARD ||============================== //
@@ -21,6 +22,40 @@ const dashboard = {
       url: '/dashboard/default',
       icon: icons.DashboardOutlined,
       breadcrumbs: false
+    },
+    {
+      id: 'client',
+      title: 'Cliente',
+      type: 'collapse',
+      url: '/client/list',
+      icon: icons.UserOutlined,
+      breadcrumbs: true,
+      children: [
+        {
+          id: 'client_create',
+          title: 'Novo cliente',
+          type: 'item',
+          url: '/client/create',
+          icon: icons.UserOutlined,
+          breadcrumbs: true
+        },
+        {
+          id: 'client_list',
+          title: 'Meus clientes',
+          type: 'item',
+          url: '/client/list',
+          icon: icons.UserOutlined,
+          breadcrumbs: true
+        },
+        {
+          id: 'client_details',
+          title: 'detelhes',
+          type: 'item',
+          url: '/client/details/1',
+          icon: icons.UserOutlined,
+          breadcrumbs: true
+        }
+      ]
     },
     {
       id: 'vehicle',
