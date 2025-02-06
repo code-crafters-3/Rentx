@@ -12,6 +12,7 @@ const CalendarDefault = Loadable(lazy(() => import('pages/calendar/index')));
 
 const VehiclePage = Loadable(lazy(() => import('pages/vehicle/create/createVehicle.jsx')));
 const CreateClient = Loadable(lazy(() => import('pages/client/create/createClient.tsx')));
+const ListClients = Loadable(lazy(() => import('pages/client/list/listClients.tsx')));
 const ListVehiclePage = Loadable(lazy(() => import('pages/vehicle/list/listVehicle')));
 const VehicleDetails = Loadable(lazy(() => import('pages/vehicle/details/index.jsx')));
 // render - sample page
@@ -51,6 +52,10 @@ const MainRoutes = {
     {
       path: 'client/create',
       element: <CreateClient />
+    },
+    {
+      path: 'client/list',
+      element: <ListClients />
     },
     {
       path: 'vehicle/create',
